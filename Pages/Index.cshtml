@@ -4,22 +4,37 @@
     ViewData["Title"] = "Home page";
 }
 
-<link rel="stylesheet" href="/stylesheet.css" />
 
-<div class="text-center">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+ <link rel="stylesheet" href="/stylesheet.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+ <div class="text-center">
     <h1 class="display-4">Your Train Tickets and Timetables All In One Place</h1>
-    <p>
+    <p id = p1>
         Discover the ease of travel with our Ticket Reservation System. Effortlessly book train tickets and explore schedules in a user-friendly interface. Whether you're a frequent traveler or planning a one-time trip, our platform ensures a seamless and efficient booking process. Welcome to a new era of hassle-free rail journey planning!
     </p>
-    <form action="/search" method="get">
+    <div id= searchboxes>
+        <form action="/search" method="get">
             <label for="from">From Station or City:</label>
             <input type="text" id="from" name="from" placeholder="Enter origin" required>
             <button type="submit">Search</button>
-    </form>
-    <form action="/search" method="get">
+        </form>
+    
+        <form action="/search" method="get">
             <label for="to">To Station or City:</label>
             <input type="text" id="to" name="to" placeholder="Enter destination" required>
             <button type="submit">Search</button>
-    </form>
+        </form>
+    </div>
     <button id="getTicketsBtn">Get Tickets</button>
-</div>
+ </div>
+</body>

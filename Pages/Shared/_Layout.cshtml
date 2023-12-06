@@ -43,8 +43,10 @@
         <main role="main" class="pb-3">
             
             @RenderBody()
-        
-            <div class="text-center">
+
+            @if (ViewBag.IsHomePage != null && (bool)ViewBag.IsHomePage)
+                { 
+                    <div class="text-center">
                 <h1 class="display-4">Your Train Tickets and Timetables All In One Place</h1>
                 <p id="p1">
                     Discover the ease of travel with our Ticket Reservation System. Effortlessly book train tickets and explore schedules in a user-friendly interface. Whether you're a frequent traveler or planning a one-time trip, our platform ensures a seamless and efficient booking process. Welcome to a new era of hassle-free rail journey planning!
@@ -64,7 +66,14 @@
                     <button id="getTicketsBtn">Get Tickets</button>
                 </div>
 
-                <div class="light-pink-div">
+            </div>
+                }
+        
+            
+        </main>
+    </div>
+
+    <div class="light-pink-div">
                     <div class="points">
                         <div class="point">
                             <img src="piggy-bank.png" alt="piggy-bank">
@@ -83,9 +92,6 @@
                             <p>Customer service on hand every step of the way</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </main>
     </div>
 
     <footer class="border-top footer text-muted">

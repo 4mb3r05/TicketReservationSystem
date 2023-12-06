@@ -3,6 +3,7 @@
     width: 300px;
     height: 100px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 label[for="from"] , [for="to"] {
@@ -42,7 +43,7 @@ body {
   }
 
 #getTicketsBtn {
-    padding: 10%;
+    border-radius: 5px;
 }
 
 .light-pink-div {

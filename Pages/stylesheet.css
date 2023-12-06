@@ -13,6 +13,7 @@ label[for="from"] {
 
 body {
     font-family: 'Roboto Mono', monospace;
+    margin-bottom: 60px;
 }
 
 .background-div {
@@ -28,5 +29,15 @@ body {
     .background-div {
       height: 80vh; /* Adjust the height for smaller screens */
     }
+  }
+
+  html {
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+  }
+
+  .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
   }
   

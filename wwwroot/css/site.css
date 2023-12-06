@@ -17,14 +17,7 @@ body {
     margin-bottom: 60px;
 }
 
-.background {
-    background-image: url('meiying-ng-OrwkD-iWgqg-unsplash');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 50vh;
-    position: relative;
-  }
+
   
   /* Media query for screens with a maximum width of 768 pixels (typical for phones) */
   @media (max-width: 768px) {
@@ -47,7 +40,7 @@ body {
     border-radius: 5px;
 }
 
-.light-pink-div {
+div.text-center{
     background-color: #ffc0cb; /* Light pink background color */
     padding: 20px; /* Adjust the padding as needed */
     margin-top: 20px; 
@@ -56,6 +49,11 @@ body {
     height: 100px;
     display: flex;
     justify-content: space-around; 
+    background-image: url('meiying-ng-OrwkD-iWgqg-unsplash');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .points {
@@ -70,14 +68,3 @@ body {
     flex: 1;
 }
 
-.point img {
-    width: 50px; 
-    height: 50px; 
-}
-
-.background img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}

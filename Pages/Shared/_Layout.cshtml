@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="~/TicketReservationSystem.styles.css" asp-append-version="true" />
 </head>
 <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto+Mono&display=swap" rel="stylesheet">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -35,6 +38,47 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+<div class="text-center">
+    <h1 class="display-4">Your Train Tickets and Timetables All In One Place</h1>
+    <p id = p1>
+        Discover the ease of travel with our Ticket Reservation System. Effortlessly book train tickets and explore schedules in a user-friendly interface. Whether you're a frequent traveler or planning a one-time trip, our platform ensures a seamless and efficient booking process. Welcome to a new era of hassle-free rail journey planning!
+    </p>
+     <div id= searchboxes>
+        <form action="/search" method="get">
+            <label for="from">From Station or City:</label>
+            <input type="text" id="from" name="from" placeholder="Enter origin" required>
+            <button type="submit">Search</button>
+        </form>
+    
+        <form action="/search" method="get">
+            <label for="to">To Station or City:</label>
+            <input type="text" id="to" name="to" placeholder="Enter destination" required>
+            <button type="submit">Search</button>
+        </form>
+        <button id="getTicketsBtn">Get Tickets</button>
+     </div>
+    
+     <div class="light-pink-div">
+        <div class="points">
+            <div class="point">
+                <img src="piggy-bank.png" alt="piggy-bank">
+                <p>Compare cheap prices for train and bus tickets</p>
+            </div>
+            <div class="point">
+                <img src="earth-europa.png" alt="globe">
+                <p>Travel thousands of destinations in and across 45 countries</p>
+            </div>
+            <div class="point">
+                <img src="transporter.png" alt="people">
+                <p>Join millions of people who use us every day</p>
+            </div>
+            <div class="point">
+                <img src="laugh-beam.png" alt="customer">
+                <p>Customer service on hand every step of the way</p>
+            </div>
+        </div>
+     </div>
+ </div>    
     </div>
 
     <footer class="border-top footer text-muted">

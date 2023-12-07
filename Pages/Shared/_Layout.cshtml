@@ -13,6 +13,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -64,6 +69,76 @@
                         <button type="submit">Search</button>
                     </form>
                     <button id="getTicketsBtn">Get Tickets</button>
+
+
+                    <script>
+                     $(function () {
+                       var availableStations = [
+                       "London Paddington",
+                        "Manchester Piccadilly",
+                        "Birmingham New Street",
+                        "Liverpool Lime Street",
+                        "Leeds",
+                        "Newcastle",
+                        "Bristol Temple Meads",
+                        "Edinburgh Waverley",
+                        "Glasgow Central",
+                        "Sheffield",
+                        "Oxford",
+                        "Cambridge",
+                        "Cardiff Central",
+                        "Nottingham",
+                        "York",
+                        "Southampton Central",
+                        "Aberdeen",
+                        "Brighton",
+                        "Exeter St Davids",
+                        "Dundee",
+                        "Plymouth",
+                        "Swansea",
+                        "Inverness",
+                        "Portsmouth Harbour",
+                        "Stirling",
+                        "Luton",
+                        "Reading",
+                        "Canterbury West",
+                        "Belfast Central",
+                        "Carlisle",
+                        "Dover Priory",
+                        "Hull",
+                        "Blackpool North",
+                        "Milton Keynes Central",
+                        "Aberystwyth",
+                        "Worcester Foregate Street",
+                        "Bradford Interchange",
+                        "Lancaster",
+                        "Truro",
+                        "Wolverhampton",
+                        "Norwich",
+                        "Dumfries",
+                        "Chester",
+                        "Salisbury",
+                        "Derry/Londonderry",
+                        "Harrogate",
+                        "Leicester"
+                        ];
+
+                      $("#fromStation, #toStation").autocomplete({
+                       source: availableStations
+                      });
+                    });
+
+                    $("#searchButton").on("click", function () {
+                     var fromStation = $("#fromStation").val();
+                     var toStation = $("#toStation").val();
+
+                      if (fromStation && toStation) {
+                       window.location.href = "/timetable?from=" + fromStation + "&to=" + toStation;
+                       } else {
+                        alert("Please select both From and To stations.");
+                        }
+                      });
+                    </script>
                 </div>
 
             </div>

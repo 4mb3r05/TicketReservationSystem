@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 
 
 
+
 namespace TicketReservationSystem.Models
 {
     [DbContext(typeof(ApplicationDbContext))]
@@ -312,6 +313,17 @@ namespace TicketReservationSystem.Models
   }
 
     } 
+}
+
+public class ApplicationDbContext : DbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    }
+
+    // DbSet for TrainSchedule
+    public DbSet<TrainSchedule> TrainSchedules { get; set; }
 }
 
     

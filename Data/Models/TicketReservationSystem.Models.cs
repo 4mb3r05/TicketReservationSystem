@@ -27,12 +27,7 @@ namespace TicketReservationSystem.Models
         public Station FromStation { get; set; } = new Station();
         public Station ToStation { get; set; } = new Station();
     }
+
+    
 }
 
-namespace TicketReservationSystem.Data
-{
-
-
-
-
-}

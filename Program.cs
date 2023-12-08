@@ -1,6 +1,12 @@
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using TicketReservationSystem.Data;
+using TicketReservationSystem.Models;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace TicketReservationSystem
 {
@@ -21,6 +27,39 @@ namespace TicketReservationSystem
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
+
+            // Seed the database
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var dbContext = services.GetRequiredService<ApplicationDbContext>();
+
+                    // Check if there are no existing TrainSchedules
+                    if (!dbContext.TrainSchedules.Any())
+                    {
+                        // Seed TrainSchedules
+                        var schedule1 = new TrainSchedule
+                        {
+                            TrainNumber = "T123",
+                            DepartureStation = "Station A",
+                            ArrivalStation = "Station B",
+                            DepartureTime = DateTime.Now.AddHours(1),
+                            ArrivalTime = DateTime.Now.AddHours(2),
+                            Price = 50.0m
+                        };
+
+                        dbContext.TrainSchedules.Add(schedule1);
+                        dbContext.SaveChanges();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred while seeding the database.");
+                }
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -47,3 +86,4 @@ namespace TicketReservationSystem
         }
     }
 }
+

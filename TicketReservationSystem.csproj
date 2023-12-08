@@ -28,5 +28,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TicketReservationSystem.Models\TicketReservationSystem.Models.csproj" />
+    <ProjectReference Include="source\repos\TicketReservationSystem\TicketReservationSystem.csproj.user" />
+  </ItemGroup>
+
 
 </Project>

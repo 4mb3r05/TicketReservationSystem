@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TicketReservationSystem.Models; 
 using Microsoft.AspNetCore.Identity;
 
+
 namespace TicketReservationSystem.Models
 {
     public class Station

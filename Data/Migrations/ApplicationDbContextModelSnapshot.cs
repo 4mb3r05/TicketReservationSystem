@@ -321,10 +321,10 @@ public class ApplicationDbContext : DbContext
         : base(options)
     {
     }
-
-    // DbSet for TrainSchedule
-    public DbSet<TrainSchedule> TrainSchedules { get; set; }
 }
+
+
+
 
     
 

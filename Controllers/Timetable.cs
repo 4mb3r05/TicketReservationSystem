@@ -7,19 +7,7 @@ namespace TicketReservationSystem.Controllers
 {
     public class TimetableController : Controller {
 
-        private readonly ApplicationDbContext _context;
-
-        public TimetableController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-        
-        public IActionResult GetTimetables()
-        {
-            List<Timetable> trainSchedules = [];
-            // Populate the trainSchedules list with data
-            return View(trainSchedules); // Assuming you have a corresponding view named GetTimetables.cshtml
-        }
+       
     }
     public class Timetable
     {

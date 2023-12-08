@@ -275,39 +275,6 @@ namespace TicketReservationSystem.Models
                         .IsRequired();
                 });
         #pragma warning restore 612, 618
-       
-    
-
-    modelBuilder.Entity<Station>(entity =>
-    {
-        entity.Property(e => e.StationId).ValueGeneratedOnAdd();
-        entity.Property(e => e.Name).IsRequired().HasMaxLength(255);
-    });
-
-    modelBuilder.Entity<City>(entity =>
-    {
-        entity.Property(e => e.CityId).ValueGeneratedOnAdd();
-        entity.Property(e => e.Name).IsRequired().HasMaxLength(255);
-    });
-
-    modelBuilder.Entity<Trace>(entity =>
-{
-    entity.Property(e => e.TrainId).ValueGeneratedOnAdd();
-    entity.Property(e => e.TrainNumber).IsRequired().HasMaxLength(255);
-    // Add other properties as needed
-
-    entity.HasOne(d => d.FromStation)
-        .WithMany()
-        .HasForeignKey(d => d.FromStationId)
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_Trains_Stations_From");
-
-    entity.HasOne(d => d.ToStation)
-        .WithMany()
-        .HasForeignKey(d => d.ToStationId)
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_Trains_Stations_To");
-});
 
 
   }
